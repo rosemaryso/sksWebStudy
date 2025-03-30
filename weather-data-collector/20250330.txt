@@ -1,0 +1,47 @@
+nssm 다운로드
+https://nssm.cc/download
+참고 사이트
+https://woony-sik.tistory.com/9
+
+
+
+5. Windows에서 자동 실행
+(1) 작업 스케줄러(Task Scheduler) 등록
+Windows + R → taskschd.msc 입력 후 실행
+
+새 작업 만들기
+
+트리거: 5분마다 실행
+
+동작: python C:\path\to\script.py 실행
+
+(2) Windows 서비스로 등록 (NSSM)
+sh
+복사
+편집
+nssm install WeatherService "C:\path\to\python.exe" "C:\path\to\script.py"
+sc start WeatherService
+
+
+
+
+
+---
+
+## **5. GitHub에 업로드**
+Git Bash 또는 Windows 명령 프롬프트(CMD)에서 실행합니다.
+
+```sh
+# 1. Git 초기화
+git init
+
+# 2. GitHub 원격 저장소 연결
+git remote add origin https://github.com/your-username/weather-data-collector.git
+
+# 3. 파일 추가 및 커밋
+git add .
+git commit -m "Initial commit: Weather data collector"
+
+# 4. GitHub에 업로드
+git branch -M main
+git push -u origin main
